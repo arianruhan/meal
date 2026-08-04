@@ -1,0 +1,45 @@
+name: Update meal chart data
+
+on:
+  schedule:
+    # Runs every 30 minutes. GitHub's scheduler is best-effort and can lag
+    # a few minutes under load — that's normal.
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Fetch latest workbook from OneDrive
+        env:
+          ONEDRIVE_SHARE_URL: ${{ secrets.ONEDRIVE_SHARE_URL }}
+        run: python scripts/build_data.py
+
+      - name: Commit updated data.json
+        run: |
+          git config user.name "meal-chart-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet -- data.json; then
+            echo "No changes to data.json"
+          else
+            git add data.json
+            git commit -m "Auto-update meal chart data [skip ci]"
+            git push
+          fi

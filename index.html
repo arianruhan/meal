@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mess Ledger — Meal Chart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF6EC;
+    --paper-dim:#F1EADA;
+    --ink:#20242C;
+    --ink-soft:#5B5A52;
+    --navy:#1B2A45;
+    --navy-2:#233757;
+    --credit:#2F6F4E;
+    --credit-bg:#E4EFE6;
+    --due:#B0402A;
+    --due-bg:#F5E4DE;
+    --gold:#B9862E;
+    --rule:#DCD3BE;
+    --shadow: 0 1px 0 rgba(0,0,0,.04);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      repeating-linear-gradient(transparent, transparent 27px, var(--rule) 28px);
+    background-attachment:local;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px;}
+
+  header.top{
+    background:var(--navy);
+    background-image: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+    color:#F4EFE3;
+    padding:36px 20px 30px;
+    border-bottom:6px double #0F1930;
+  }
+  header.top .inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
+  .brand-eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:#C9BFA6;margin:0 0 6px;
+  }
+  h1{
+    font-family:'Newsreader',serif;
+    font-weight:600;
+    font-size:clamp(28px,4.5vw,42px);
+    margin:0;
+    letter-spacing:.2px;
+  }
+  .status{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:#C9BFA6;
+    text-align:right;
+    line-height:1.7;
+  }
+  .status .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#6FBF8B;margin-right:6px;box-shadow:0 0 0 3px rgba(111,191,139,.18);}
+  .status button{
+    margin-top:4px;
+    background:transparent;border:1px solid #4B5A78;color:#EFE9DA;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    padding:5px 10px;border-radius:3px;cursor:pointer;letter-spacing:.05em;
+  }
+  .status button:hover{border-color:var(--gold);color:var(--gold);}
+  .status button:focus-visible, a:focus-visible, .row-name:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+  /* Stat receipt strip */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:0;
+    margin:-1px 0 40px;
+    border:1px solid var(--rule);
+    background:var(--paper);
+  }
+  .stat{
+    padding:18px 18px 16px;
+    border-left:1px dashed var(--rule);
+    position:relative;
+  }
+  .stat:first-child{border-left:none;}
+  .stat .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:8px;
+  }
+  .stat .value{
+    font-family:'Newsreader',serif;font-weight:600;
+    font-size:26px;color:var(--navy);
+    font-variant-numeric:tabular-nums;
+  }
+  .stat .value.due{color:var(--due);}
+  .stat .value.credit{color:var(--credit);}
+  .stat .sub{font-size:11px;color:var(--ink-soft);margin-top:3px;}
+
+  section{margin-bottom:44px;}
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:8px;margin-bottom:4px;
+  }
+  .section-head h2{
+    font-family:'Newsreader',serif;font-weight:600;font-size:20px;margin:0;
+  }
+  .section-head .count{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);
+  }
+
+  /* Ledger table */
+  table.ledger{width:100%;border-collapse:collapse;font-size:14px;}
+  table.ledger thead th{
+    text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);
+    padding:10px 10px;border-bottom:1px solid var(--rule);font-weight:600;
+  }
+  table.ledger th.num, table.ledger td.num{text-align:right;font-variant-numeric:tabular-nums;}
+  table.ledger tbody tr{border-bottom:1px dashed var(--rule);cursor:pointer;}
+  table.ledger tbody tr:hover{background:var(--paper-dim);}
+  table.ledger td{padding:12px 10px;vertical-align:middle;}
+  .row-name{font-family:'Newsreader',serif;font-weight:600;font-size:15.5px;}
+  .badge{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;
+    padding:3px 8px;border-radius:2px;border:1px solid transparent;display:inline-block;
+  }
+  .badge.due{background:var(--due-bg);color:var(--due);border-color:#e3c3b7;}
+  .badge.credit{background:var(--credit-bg);color:var(--credit);border-color:#c3d9c9;}
+  td.num.due{color:var(--due);}
+  td.num.credit{color:var(--credit);}
+
+  .day-detail{display:none;background:var(--paper-dim);}
+  .day-detail.open{display:table-row;}
+  .day-detail td{padding:14px 16px 18px;}
+  .day-grid{display:flex;flex-wrap:wrap;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;}
+  .day-chip{
+    border:1px solid var(--rule);background:var(--paper);padding:5px 7px;min-width:46px;text-align:center;border-radius:3px;
+  }
+  .day-chip .d{color:var(--ink-soft);display:block;font-size:9px;margin-bottom:2px;}
+  .day-chip.has-meal{border-color:var(--gold);background:#FBF1DC;}
+  .day-chip .t{font-weight:600;color:var(--navy);}
+  .breakdown-note{font-size:11px;color:var(--ink-soft);margin-top:10px;font-family:'IBM Plex Mono',monospace;}
+
+  /* Bazar log */
+  .bazar-list{display:flex;flex-direction:column;gap:0;}
+  .bazar-item{
+    display:grid;grid-template-columns:110px 1fr 100px;gap:14px;align-items:baseline;
+    padding:13px 0;border-bottom:1px dashed var(--rule);
+  }
+  .bazar-item .date{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);}
+  .bazar-item .items{font-size:14px;}
+  .bazar-item .items .by{display:block;font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
+  .bazar-item .cost{font-family:'IBM Plex Mono',monospace;font-weight:600;text-align:right;color:var(--navy);}
+
+  footer{
+    text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);
+    padding:30px 20px 10px;
+  }
+
+  .error-banner{
+    background:var(--due-bg);color:var(--due);border:1px solid #e3c3b7;
+    padding:12px 16px;border-radius:4px;font-size:13px;margin:20px 0;
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  @media (max-width:640px){
+    header.top .inner{flex-direction:column;align-items:flex-start;}
+    .status{text-align:left;}
+    table.ledger thead{display:none;}
+    table.ledger tbody tr{display:block;padding:10px 0;}
+    table.ledger td{display:flex;justify-content:space-between;padding:4px 10px;border:none;}
+    table.ledger td.name-cell::before,
+    table.ledger td[data-label]::before{
+      content:attr(data-label);font-family:'IBM Plex Mono',monospace;font-size:10px;
+      color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;
+    }
+    .bazar-item{grid-template-columns:1fr;gap:2px;}
+    .bazar-item .cost{text-align:left;}
+  }
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="inner">
+    <div>
+      <p class="brand-eyebrow">Bachelor's Mess &middot; August 2026</p>
+      <h1>Meal Chart Ledger</h1>
+    </div>
+    <div class="status">
+      <div><span class="dot"></span><span id="lastUpdated">loading…</span></div>
+      <div id="nextRefresh">next auto-refresh in —</div>
+      <button id="refreshBtn" type="button">Refresh now</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div id="errorBanner" class="error-banner" style="display:none;"></div>
+
+  <div class="stats" id="statsRow"></div>
+
+  <section>
+    <div class="section-head">
+      <h2>Members</h2>
+      <span class="count" id="memberCount"></span>
+    </div>
+    <table class="ledger">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th class="num">Meals</th>
+          <th class="num">Deposit (Tk)</th>
+          <th class="num">Cost (Tk)</th>
+          <th class="num">Balance (Tk)</th>
+        </tr>
+      </thead>
+      <tbody id="ledgerBody"></tbody>
+    </table>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Bazar Log</h2>
+      <span class="count" id="bazarCount"></span>
+    </div>
+    <div class="bazar-list" id="bazarList"></div>
+  </section>
+
+</div>
+
+<footer>
+  Pulled from the group's Google Sheet every 30 minutes via GitHub Actions &middot;
+  <a href="data.json" target="_blank" rel="noopener">view raw data.json</a>
+</footer>
+
+<script>
+const REFRESH_MS = 30 * 60 * 1000;
+let nextTick = null;
+let countdownTimer = null;
+
+function fmtTk(n){
+  const sign = n < 0 ? "-" : "";
+  const v = Math.abs(n).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  return sign + v;
+}
+
+function fmtRelative(iso){
+  const d = new Date(iso);
+  const diffMin = Math.round((Date.now() - d.getTime())/60000);
+  if (diffMin < 1) return "updated just now";
+  if (diffMin < 60) return `updated ${diffMin} min ago`;
+  const h = Math.floor(diffMin/60);
+  return `updated ${h}h ${diffMin%60}m ago`;
+}
+
+function renderStats(data){
+  const el = document.getElementById('statsRow');
+  const dueTotal = data.total_due < 0;
+  el.innerHTML = `
+    <div class="stat">
+      <div class="label">Grand total meals</div>
+      <div class="value">${data.grand_total_meal}</div>
+      <div class="sub">this month, all members</div>
+    </div>
+    <div class="stat">
+      <div class="label">Meal rate</div>
+      <div class="value">৳${data.meal_rate.toFixed(2)}</div>
+      <div class="sub">bazar cost ÷ meals</div>
+    </div>
+    <div class="stat">
+      <div class="label">Total bazar cost</div>
+      <div class="value">৳${fmtTk(data.total_bazar_cost)}</div>
+      <div class="sub">${data.bazar.length} trip${data.bazar.length===1?'':'s'} logged</div>
+    </div>
+    <div class="stat">
+      <div class="label">Total deposit</div>
+      <div class="value credit">৳${fmtTk(data.total_deposit)}</div>
+      <div class="sub">across all members</div>
+    </div>
+    <div class="stat">
+      <div class="label">Mess total due</div>
+      <div class="value ${dueTotal?'due':'credit'}">৳${fmtTk(Math.abs(data.total_due))}</div>
+      <div class="sub">${dueTotal ? 'members owe the mess' : 'mess owes members'}</div>
+    </div>
+    <div class="stat">
+      <div class="label">Current balance</div>
+      <div class="value ${data.current_balance < 0 ? 'due' : 'credit'}">৳${fmtTk(Math.abs(data.current_balance))}</div>
+      <div class="sub">mess treasury on hand</div>
+    </div>
+  `;
+}
+
+function dayLabel(mealsObj){
+  const b = mealsObj.breakfast, l = mealsObj.lunch, d = mealsObj.dinner;
+  const parts = [];
+  if (b) parts.push('B');
+  if (l) parts.push('L');
+  if (d) parts.push('D');
+  return parts.join('');
+}
+
+function renderLedger(data){
+  const body = document.getElementById('ledgerBody');
+  document.getElementById('memberCount').textContent = `${data.people.length} members`;
+  const rows = [...data.people].sort((a,b)=> a.balance - b.balance);
+  body.innerHTML = rows.map((p, idx) => {
+    const due = p.balance < 0;
+    const badge = due ? `<span class="badge due">DUE</span>` : `<span class="badge credit">CREDIT</span>`;
+    const rowId = `detail-${idx}`;
+    const days = Object.entries(p.days)
+      .filter(([,v]) => v.total > 0)
+      .sort((a,b) => Number(a[0]) - Number(b[0]));
+    const dayChips = days.length
+      ? days.map(([d,v]) => `<div class="day-chip has-meal"><span class="d">Aug ${d}</span><span class="t">${dayLabel(v)} · ${v.total}</span></div>`).join('')
+      : `<span class="breakdown-note">No meals recorded yet.</span>`;
+    return `
+      <tr class="row-toggle" data-target="${rowId}" tabindex="0">
+        <td class="name-cell" data-label="Name"><span class="row-name">${p.name}</span> ${badge}</td>
+        <td class="num" data-label="Meals">${p.total_meals}</td>
+        <td class="num" data-label="Deposit">৳${fmtTk(p.deposit)}</td>
+        <td class="num" data-label="Cost">৳${fmtTk(p.personal_cost)}</td>
+        <td class="num ${due?'due':'credit'}" data-label="Balance">${due?'-':''}৳${fmtTk(Math.abs(p.balance))}</td>
+      </tr>
+      <tr class="day-detail" id="${rowId}">
+        <td colspan="5">
+          <div class="day-grid">${dayChips}</div>
+          <div class="breakdown-note">Khalar ৳${fmtTk(p.khalar)} · Gas ৳${fmtTk(p.gas)} · Electricity ৳${fmtTk(p.electricity)} · B = breakfast (½ meal), L = lunch, D = dinner</div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+
+  body.querySelectorAll('.row-toggle').forEach(row => {
+    const toggle = () => {
+      const target = document.getElementById(row.dataset.target);
+      target.classList.toggle('open');
+    };
+    row.addEventListener('click', toggle);
+    row.addEventListener('keydown', e => { if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); }});
+  });
+}
+
+function renderBazar(data){
+  const list = document.getElementById('bazarList');
+  document.getElementById('bazarCount').textContent = `${data.bazar.length} entries`;
+  const items = [...data.bazar].sort((a,b)=> b.date.localeCompare(a.date));
+  list.innerHTML = items.map(b => `
+    <div class="bazar-item">
+      <div class="date">${b.date}</div>
+      <div class="items">${b.items || '—'}<span class="by">by ${b.person || 'unknown'}</span></div>
+      <div class="cost">৳${fmtTk(b.cost)}</div>
+    </div>
+  `).join('') || `<div class="breakdown-note">No bazar trips logged yet.</div>`;
+}
+
+function showError(msg){
+  const banner = document.getElementById('errorBanner');
+  banner.textContent = msg;
+  banner.style.display = 'block';
+}
+function hideError(){
+  document.getElementById('errorBanner').style.display = 'none';
+}
+
+function startCountdown(){
+  clearInterval(countdownTimer);
+  nextTick = Date.now() + REFRESH_MS;
+  countdownTimer = setInterval(() => {
+    const remain = Math.max(0, nextTick - Date.now());
+    const m = Math.floor(remain/60000);
+    const s = Math.floor((remain%60000)/1000);
+    document.getElementById('nextRefresh').textContent =
+      `next auto-refresh in ${m}m ${s.toString().padStart(2,'0')}s`;
+  }, 1000);
+}
+
+async function loadData(){
+  try{
+    const res = await fetch(`data.json?t=${Date.now()}`, {cache:'no-store'});
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    hideError();
+    renderStats(data);
+    renderLedger(data);
+    renderBazar(data);
+    document.getElementById('lastUpdated').textContent = fmtRelative(data.generated_at);
+  }catch(err){
+    showError(`Couldn't load data.json — ${err.message}. Showing the last data that loaded successfully.`);
+  }
+}
+
+document.getElementById('refreshBtn').addEventListener('click', () => { loadData(); startCountdown(); });
+
+loadData();
+startCountdown();
+setInterval(loadData, REFRESH_MS);
+</script>
+
+</body>
+</html>
