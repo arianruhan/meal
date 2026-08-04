@@ -2,9 +2,9 @@ name: Update meal chart data
 
 on:
   schedule:
-    # Runs every 3 minutes. GitHub's scheduler is best-effort and can lag
+    # Runs every 30 minutes. GitHub's scheduler is best-effort and can lag
     # a few minutes under load — that's normal.
-    - cron: "*/3 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
   push:
     branches: [main]
