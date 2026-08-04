@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,10 +23,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install openpyxl requests
-
-      - name: Pull latest changes from remote
-        run: git pull --rebase origin main
+        run: pip install openpyxl requests   # <-- changed to this
 
       - name: Fetch latest workbook from OneDrive
         env:
@@ -44,5 +39,5 @@ jobs:
           else
             git add data.json
             git commit -m "Auto-update meal chart data [skip ci]"
-            git push origin main
+            git push
           fi
