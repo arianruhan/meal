@@ -2,7 +2,7 @@ name: Update meal chart data
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 * * * *" 
   workflow_dispatch: {}
   push:
     branches: [main]
