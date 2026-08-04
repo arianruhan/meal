@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=1080">
+<!-- Fixed width forces mobile browsers to render this like a desktop page,
+     the same effect as manually switching to "Desktop site" mode. -->
+
 <title>BAHRAM UNCLE MESS — Meal Chart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +25,7 @@
     --teal:#1B8A8A;
     --plum:#8B4A9C;
     --sky:#2F7DC4;
-    --rule:#E7E2D6;
+    --rule:#ECE8DD;
     --shadow: 0 1px 0 rgba(0,0,0,.04);
   }
   *{box-sizing:border-box;}
@@ -92,10 +95,9 @@
     padding:18px 18px 16px;
     position:relative;
     background:#fff;
-    border:1px solid var(--rule);
     border-top:3px solid var(--accent, var(--navy));
     border-radius:8px;
-    box-shadow:0 1px 3px rgba(20,30,50,.05);
+    box-shadow:0 1px 6px rgba(20,30,50,.07);
   }
   .stat:nth-child(1){--accent:var(--gold);}
   .stat:nth-child(2){--accent:var(--teal);}
@@ -117,7 +119,7 @@
   .stat .value.credit{color:var(--credit);}
   .stat .sub{font-size:11px;color:var(--ink-soft);margin-top:3px;}
 
-  section{margin-bottom:44px;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:22px 24px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  section{margin-bottom:44px;background:#fff;border-radius:10px;padding:22px 24px 8px;box-shadow:0 1px 6px rgba(20,30,50,.07);}
   .section-head{
     display:flex;align-items:baseline;justify-content:space-between;
     border-bottom:2px solid var(--navy);
@@ -184,21 +186,6 @@
     background:var(--due-bg);color:var(--due);border:1px solid #e3c3b7;
     padding:12px 16px;border-radius:4px;font-size:13px;margin:20px 0;
     font-family:'IBM Plex Mono',monospace;
-  }
-
-  @media (max-width:640px){
-    header.top .inner{flex-direction:column;align-items:flex-start;}
-    .status{text-align:left;}
-    table.ledger thead{display:none;}
-    table.ledger tbody tr{display:block;padding:10px 0;}
-    table.ledger td{display:flex;justify-content:space-between;padding:4px 10px;border:none;}
-    table.ledger td.name-cell::before,
-    table.ledger td[data-label]::before{
-      content:attr(data-label);font-family:'IBM Plex Mono',monospace;font-size:10px;
-      color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;
-    }
-    .bazar-item{grid-template-columns:1fr;gap:2px;}
-    .bazar-item .cost{text-align:left;}
   }
 
   @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
