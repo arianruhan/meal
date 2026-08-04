@@ -8,8 +8,8 @@ import json
 import os
 import sys
 import tempfile
-import urllib.parse
-import requests
+import urllib.request
+import requests  # <-- we now use requests for better redirect handling
 from datetime import datetime, timezone
 
 import openpyxl
@@ -21,103 +21,43 @@ DAY_COL_START = 2
 DAY_COL_END = 32
 
 
-def _looks_like_xlsx(content: bytes) -> bool:
-    """xlsx files are zip archives — real ones start with the 'PK' signature.
-    If OneDrive hands us an HTML viewer page instead, this catches it before
-    openpyxl tries (and fails) to parse it."""
-    return content[:2] == b"PK"
-
-
-def _onedrive_api_url(share_url: str) -> str:
-    b64 = base64.urlsafe_b64encode(share_url.strip().encode("utf-8")).decode("utf-8")
-    b64 = b64.rstrip("=")
-    return f"https://api.onedrive.com/v1.0/shares/u!{b64}/root/content"
-
-
-def _looks_like_xlsx(content: bytes) -> bool:
-    """xlsx files are zip archives — real ones start with the 'PK' signature.
-    If OneDrive hands us an HTML viewer page instead, this catches it before
-    openpyxl tries (and fails) to parse it."""
-    return content[:2] == b"PK"
-
-
-def _onedrive_api_url(share_url: str) -> str:
-    b64 = base64.urlsafe_b64encode(share_url.strip().encode("utf-8")).decode("utf-8")
-    b64 = b64.rstrip("=")
-    return f"https://api.onedrive.com/v1.0/shares/u!{b64}/root/content"
-
-
-def _with_query_param(url: str, key: str, value: str) -> str:
-    """Return `url` with `key` set to `value` in the query string, replacing
-    any existing value for that key."""
-    parts = urllib.parse.urlsplit(url)
-    query = urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
-    query = [(k, v) for k, v in query if k != key]
-    query.append((key, value))
-    new_query = urllib.parse.urlencode(query)
-    return urllib.parse.urlunsplit((parts.scheme, parts.netloc, parts.path, new_query, parts.fragment))
-
-
 def download_workbook(share_url: str) -> str:
-    """Download the workbook from a public 'Anyone with the link' OneDrive
-    share, trying several methods and validating the result actually looks
-    like an .xlsx file before handing it to openpyxl. Raises a clear error
-    if every method fails, instead of silently corrupting data.json."""
+    """Download the file from a public OneDrive share link."""
     session = requests.Session()
     session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"})
+    
+    # First, resolve the share link (it usually redirects to the real URL)
+    resp = session.get(share_url, allow_redirects=False, timeout=30)
+    
+    # If it's a redirect (302/301), grab the Location header
+    if resp.status_code in (301, 302):
+        real_url = resp.headers.get("Location")
+        if not real_url:
+            raise Exception("Redirect URL not found in response headers")
+        
+        # Append &download=1 to force the browser to download the file
+        if "?" in real_url:
+            download_url = real_url + "&download=1"
+        else:
+            download_url = real_url + "?download=1"
+        
+        # Now download the actual file
+        file_resp = session.get(download_url, timeout=60)
+        file_resp.raise_for_status()
+        
+        tmp_path = os.path.join(tempfile.gettempdir(), "meal_chart_live.xlsx")
+        with open(tmp_path, "wb") as f:
+            f.write(file_resp.content)
+        return tmp_path
+    
+    # Fallback: if no redirect, try the direct download trick (old method)
+    b64 = base64.urlsafe_b64encode(share_url.encode()).decode().rstrip("=")
+    api_url = f"https://api.onedrive.com/v1.0/shares/u!{b64}/root/content"
+    req = urllib.request.Request(api_url, headers={"User-Agent": "Mozilla/5.0"})
     tmp_path = os.path.join(tempfile.gettempdir(), "meal_chart_live.xlsx")
-    errors = []
-
-    def try_get(url, label):
-        try:
-            resp = session.get(url, timeout=60, allow_redirects=True)
-            if resp.ok and _looks_like_xlsx(resp.content):
-                with open(tmp_path, "wb") as f:
-                    f.write(resp.content)
-                return tmp_path
-            errors.append(f"{label}: HTTP {resp.status_code}, "
-                           f"content looked like xlsx = {_looks_like_xlsx(resp.content)}")
-        except Exception as e:
-            errors.append(f"{label}: {e}")
-        return None
-
-    # Method 1: resolve the share link, then — if it landed on OneDrive's
-    # "Doc.aspx" web viewer page — swap action=default for action=download,
-    # which makes OneDrive stream the raw file instead of the viewer.
-    try:
-        resp = session.get(share_url, allow_redirects=True, timeout=30)
-        final_url = resp.url
-        if _looks_like_xlsx(resp.content):
-            with open(tmp_path, "wb") as f:
-                f.write(resp.content)
-            return tmp_path
-
-        if "Doc.aspx" in final_url or "action=" in final_url:
-            result = try_get(_with_query_param(final_url, "action", "download"),
-                              "Doc.aspx action=download method")
-            if result:
-                return result
-
-        # Older-style onedrive.live.com links respond to a bare download=1 flag.
-        result = try_get(_with_query_param(final_url, "download", "1"),
-                          "download=1 method")
-        if result:
-            return result
-    except Exception as e:
-        errors.append(f"redirect-resolve step: {e}")
-
-    # Last resort: the legacy anonymous-share API. Only works for some
-    # personal Microsoft accounts — many now return 401 for it.
-    result = try_get(_onedrive_api_url(share_url), "api.onedrive.com method")
-    if result:
-        return result
-
-    raise RuntimeError(
-        "Could not download a valid .xlsx from ONEDRIVE_SHARE_URL. "
-        "All download methods failed:\n  - " + "\n  - ".join(errors) +
-        "\nCheck that the link is still shared as 'Anyone with the link can view' "
-        "and hasn't expired or been replaced."
-    )
+    with urllib.request.urlopen(req, timeout=60) as resp, open(tmp_path, "wb") as out:
+        out.write(resp.read())
+    return tmp_path
 
 
 def to_float(v, default=0.0):
