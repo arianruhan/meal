@@ -8,18 +8,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#FAF6EC;
-    --paper-dim:#F1EADA;
+    --paper:#FDFCFA;
+    --paper-dim:#F3F1EC;
     --ink:#20242C;
-    --ink-soft:#5B5A52;
+    --ink-soft:#6B6A62;
     --navy:#1B2A45;
-    --navy-2:#233757;
-    --credit:#2F6F4E;
-    --credit-bg:#E4EFE6;
-    --due:#B0402A;
-    --due-bg:#F5E4DE;
-    --gold:#B9862E;
-    --rule:#DCD3BE;
+    --navy-2:#2C4270;
+    --credit:#1E8A5F;
+    --credit-bg:#E3F5EC;
+    --due:#D0472B;
+    --due-bg:#FBEAE5;
+    --gold:#C9922E;
+    --teal:#1B8A8A;
+    --plum:#8B4A9C;
+    --sky:#2F7DC4;
+    --rule:#E7E2D6;
     --shadow: 0 1px 0 rgba(0,0,0,.04);
   }
   *{box-sizing:border-box;}
@@ -29,19 +32,24 @@
     color:var(--ink);
     font-family:'Inter',sans-serif;
     -webkit-font-smoothing:antialiased;
-    background-image:
-      repeating-linear-gradient(transparent, transparent 27px, var(--rule) 28px);
-    background-attachment:local;
   }
   a{color:inherit;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px;}
 
   header.top{
     background:var(--navy);
-    background-image: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+    background-image: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 65%, var(--teal) 160%);
     color:#F4EFE3;
     padding:36px 20px 30px;
-    border-bottom:6px double #0F1930;
+    position:relative;
+  }
+  header.top::after{
+    content:"";
+    display:block;
+    position:absolute;
+    left:0;right:0;bottom:0;
+    height:5px;
+    background:linear-gradient(90deg, var(--gold), var(--teal), var(--plum), var(--sky));
   }
   header.top .inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
   .brand-eyebrow{
@@ -73,21 +81,28 @@
   .status button:hover{border-color:var(--gold);color:var(--gold);}
   .status button:focus-visible, a:focus-visible, .row-name:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
 
-  /* Stat receipt strip */
+  /* Stat cards */
   .stats{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:0;
-    margin:-1px 0 40px;
-    border:1px solid var(--rule);
-    background:var(--paper);
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:14px;
+    margin:28px 0 44px;
   }
   .stat{
     padding:18px 18px 16px;
-    border-left:1px dashed var(--rule);
     position:relative;
+    background:#fff;
+    border:1px solid var(--rule);
+    border-top:3px solid var(--accent, var(--navy));
+    border-radius:8px;
+    box-shadow:0 1px 3px rgba(20,30,50,.05);
   }
-  .stat:first-child{border-left:none;}
+  .stat:nth-child(1){--accent:var(--gold);}
+  .stat:nth-child(2){--accent:var(--teal);}
+  .stat:nth-child(3){--accent:var(--plum);}
+  .stat:nth-child(4){--accent:var(--credit);}
+  .stat:nth-child(5){--accent:var(--sky);}
+  .stat:nth-child(6){--accent:var(--navy-2);}
   .stat .label{
     font-family:'IBM Plex Mono',monospace;
     font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
@@ -102,14 +117,15 @@
   .stat .value.credit{color:var(--credit);}
   .stat .sub{font-size:11px;color:var(--ink-soft);margin-top:3px;}
 
-  section{margin-bottom:44px;}
+  section{margin-bottom:44px;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:22px 24px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
   .section-head{
     display:flex;align-items:baseline;justify-content:space-between;
-    border-bottom:2px solid var(--ink);
-    padding-bottom:8px;margin-bottom:4px;
+    border-bottom:2px solid var(--navy);
+    padding-bottom:10px;margin-bottom:6px;
   }
   .section-head h2{
     font-family:'Newsreader',serif;font-weight:600;font-size:20px;margin:0;
+    color:var(--navy);
   }
   .section-head .count{
     font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);
@@ -123,7 +139,7 @@
     padding:10px 10px;border-bottom:1px solid var(--rule);font-weight:600;
   }
   table.ledger th.num, table.ledger td.num{text-align:right;font-variant-numeric:tabular-nums;}
-  table.ledger tbody tr{border-bottom:1px dashed var(--rule);cursor:pointer;}
+  table.ledger tbody tr{border-bottom:1px solid var(--rule);cursor:pointer;transition:background .12s ease;}
   table.ledger tbody tr:hover{background:var(--paper-dim);}
   table.ledger td{padding:12px 10px;vertical-align:middle;}
   .row-name{font-family:'Newsreader',serif;font-weight:600;font-size:15.5px;}
@@ -141,10 +157,10 @@
   .day-detail td{padding:14px 16px 18px;}
   .day-grid{display:flex;flex-wrap:wrap;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;}
   .day-chip{
-    border:1px solid var(--rule);background:var(--paper);padding:5px 7px;min-width:46px;text-align:center;border-radius:3px;
+    border:1px solid var(--rule);background:#fff;padding:5px 7px;min-width:46px;text-align:center;border-radius:5px;
   }
   .day-chip .d{color:var(--ink-soft);display:block;font-size:9px;margin-bottom:2px;}
-  .day-chip.has-meal{border-color:var(--gold);background:#FBF1DC;}
+  .day-chip.has-meal{border-color:var(--gold);background:#FCF3DE;}
   .day-chip .t{font-weight:600;color:var(--navy);}
   .breakdown-note{font-size:11px;color:var(--ink-soft);margin-top:10px;font-family:'IBM Plex Mono',monospace;}
 
@@ -240,7 +256,7 @@
 </div>
 
 <footer>
-  Pulled from the group's Google Sheet every 30 minutes via GitHub Actions &middot;
+  Pulled from the group's OneDrive workbook every <span id="refreshMinutes">—</span> via GitHub Actions &middot;
   <a href="data.json" target="_blank" rel="noopener">view raw data.json</a>
 </footer>
 
@@ -401,6 +417,12 @@ async function loadData(){
 }
 
 document.getElementById('refreshBtn').addEventListener('click', () => { loadData(); startCountdown(); });
+
+const refreshMinutesLabel = document.getElementById('refreshMinutes');
+if (refreshMinutesLabel) {
+  const mins = REFRESH_MS / 60000;
+  refreshMinutesLabel.textContent = mins === 1 ? '1 minute' : `${mins} minutes`;
+}
 
 loadData();
 startCountdown();
