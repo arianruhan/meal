@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # fetch all history to allow rebase
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,6 +26,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install openpyxl requests
+
+      - name: Pull latest changes from remote
+        run: git pull --rebase origin main
 
       - name: Fetch latest workbook from OneDrive
         env:
@@ -36,7 +39,6 @@ jobs:
         run: |
           git config user.name "meal-chart-bot"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase origin main
           if git diff --quiet -- data.json; then
             echo "No changes to data.json"
           else
