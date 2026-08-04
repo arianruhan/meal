@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1080">
-<!-- Fixed width forces mobile browsers to render this like a desktop page,
-     the same effect as manually switching to "Desktop site" mode. -->
-
+<meta name="viewport" content="width=1024"> <!-- Forces desktop width -->
 <title>BAHRAM UNCLE MESS — Meal Chart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,7 +22,7 @@
     --teal:#1B8A8A;
     --plum:#8B4A9C;
     --sky:#2F7DC4;
-    --rule:#ECE8DD;
+    --rule:#E7E2D6;
     --shadow: 0 1px 0 rgba(0,0,0,.04);
   }
   *{box-sizing:border-box;}
@@ -95,9 +92,10 @@
     padding:18px 18px 16px;
     position:relative;
     background:#fff;
+    border:1px solid var(--rule);
     border-top:3px solid var(--accent, var(--navy));
     border-radius:8px;
-    box-shadow:0 1px 6px rgba(20,30,50,.07);
+    box-shadow:0 1px 3px rgba(20,30,50,.05);
   }
   .stat:nth-child(1){--accent:var(--gold);}
   .stat:nth-child(2){--accent:var(--teal);}
@@ -119,7 +117,7 @@
   .stat .value.credit{color:var(--credit);}
   .stat .sub{font-size:11px;color:var(--ink-soft);margin-top:3px;}
 
-  section{margin-bottom:44px;background:#fff;border-radius:10px;padding:22px 24px 8px;box-shadow:0 1px 6px rgba(20,30,50,.07);}
+  section{margin-bottom:44px;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:22px 24px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
   .section-head{
     display:flex;align-items:baseline;justify-content:space-between;
     border-bottom:2px solid var(--navy);
@@ -188,6 +186,7 @@
     font-family:'IBM Plex Mono',monospace;
   }
 
+  /* Removed the @media (max-width:640px) block – desktop layout always */
   @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
 </style>
 </head>
