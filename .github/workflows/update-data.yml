@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -23,7 +26,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install openpyxl requests   # <-- changed to this
+        run: pip install openpyxl requests
 
       - name: Fetch latest workbook from OneDrive
         env:
@@ -39,5 +42,8 @@ jobs:
           else
             git add data.json
             git commit -m "Auto-update meal chart data [skip ci]"
-            git push
+            # Fetch remote and rebase our commit on top of origin/main to avoid non-fast-forward errors
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
