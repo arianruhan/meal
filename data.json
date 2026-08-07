@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-07T14:12:56.551079+00:00",
-  "meal_rate": 48.9558,
+  "generated_at": "2026-08-07T15:24:35.671343+00:00",
+  "meal_rate": 63.1727,
   "grand_total_meal": 124.5,
-  "total_bazar_cost": 6095.0,
-  "total_deposit": 13400.0,
-  "total_due": -15.0,
-  "current_balance": 4605.0,
+  "total_bazar_cost": 7865.0,
+  "total_deposit": 17900.0,
+  "total_due": 2715.0,
+  "current_balance": 7335.0,
   "people": [
     {
       "name": "Al-Amin",
@@ -198,9 +198,9 @@
         }
       },
       "total_meals": 9.0,
-      "personal_cost": 1085.6,
+      "personal_cost": 1213.55,
       "deposit": 0.0,
-      "balance": -1085.6,
+      "balance": -1213.55,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -396,9 +396,9 @@
         }
       },
       "total_meals": 12.5,
-      "personal_cost": 1256.95,
+      "personal_cost": 1434.66,
       "deposit": 2500.0,
-      "balance": 1243.05,
+      "balance": 1065.34,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -594,9 +594,9 @@
         }
       },
       "total_meals": 12.5,
-      "personal_cost": 1256.95,
+      "personal_cost": 1434.66,
       "deposit": 900.0,
-      "balance": -356.95,
+      "balance": -534.66,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -792,9 +792,9 @@
         }
       },
       "total_meals": 9.0,
-      "personal_cost": 1085.6,
+      "personal_cost": 1213.55,
       "deposit": 1000.0,
-      "balance": -85.6,
+      "balance": -213.55,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -990,9 +990,9 @@
         }
       },
       "total_meals": 13.5,
-      "personal_cost": 1305.9,
+      "personal_cost": 1497.83,
       "deposit": 3000.0,
-      "balance": 1694.1,
+      "balance": 1502.17,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -1188,9 +1188,9 @@
         }
       },
       "total_meals": 12.5,
-      "personal_cost": 1256.95,
-      "deposit": 0.0,
-      "balance": -1256.95,
+      "personal_cost": 1434.66,
+      "deposit": 1000.0,
+      "balance": -434.66,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -1386,9 +1386,9 @@
         }
       },
       "total_meals": 12.5,
-      "personal_cost": 1256.95,
+      "personal_cost": 1434.66,
       "deposit": 2000.0,
-      "balance": 743.05,
+      "balance": 565.34,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -1584,9 +1584,9 @@
         }
       },
       "total_meals": 12.0,
-      "personal_cost": 1232.47,
+      "personal_cost": 1403.07,
       "deposit": 2000.0,
-      "balance": 767.53,
+      "balance": 596.93,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -1782,9 +1782,9 @@
         }
       },
       "total_meals": 12.5,
-      "personal_cost": 1256.95,
+      "personal_cost": 1434.66,
       "deposit": 0.0,
-      "balance": -1256.95,
+      "balance": -1434.66,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -1980,9 +1980,9 @@
         }
       },
       "total_meals": 9.5,
-      "personal_cost": 1110.08,
-      "deposit": 1000.0,
-      "balance": -110.08,
+      "personal_cost": 1245.14,
+      "deposit": 2700.0,
+      "balance": 1454.86,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -2178,9 +2178,9 @@
         }
       },
       "total_meals": 9.0,
-      "personal_cost": 1085.6,
-      "deposit": 1000.0,
-      "balance": -85.6,
+      "personal_cost": 1213.55,
+      "deposit": 2800.0,
+      "balance": 1586.45,
       "khalar": 420.0,
       "gas": 141.66666666666666,
       "electricity": 83.33333333333333
@@ -2204,6 +2204,12 @@
       "cost": 600.0,
       "person": "Said vai",
       "items": "dal,alu"
+    },
+    {
+      "date": "2026-08-07",
+      "cost": 1770.0,
+      "person": "sobuj vai",
+      "items": "Beef"
     }
   ]
 }
