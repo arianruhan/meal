@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-16T15:17:52.105264+00:00",
+  "generated_at": "2026-08-16T15:20:42.031875+00:00",
   "meal_rate": 53.092,
   "grand_total_meal": 331.5,
   "total_bazar_cost": 17600.0,
   "total_deposit": 25900.0,
-  "total_due": -20.0,
+  "total_due": -440.0,
   "current_balance": 4600.0,
   "people": [
     {
@@ -396,12 +396,12 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 53.09,
+      "personal_cost": 781.43,
       "deposit": 0.0,
-      "balance": -53.09,
-      "khalar": 0.0,
-      "gas": 0.0,
-      "electricity": 0.0
+      "balance": -781.43,
+      "khalar": 420.0,
+      "gas": 141.66666666666666,
+      "electricity": 166.66666666666666
     },
     {
       "name": "Anwar",
