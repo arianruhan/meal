@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T16:38:14.392229+00:00",
+  "generated_at": "2026-08-17T16:55:18.738762+00:00",
   "meal_rate": 50.2128,
   "grand_total_meal": 352.5,
   "total_bazar_cost": 17700.0,
@@ -2410,6 +2410,12 @@
       "items": "Beef"
     },
     {
+      "date": "2026-08-08",
+      "cost": 510.0,
+      "person": "tanha",
+      "items": "egg,salt,chilli"
+    },
+    {
       "date": "2026-08-09",
       "cost": 2765.0,
       "person": "tanha",
@@ -2450,12 +2456,6 @@
       "cost": 100.0,
       "person": "Khala",
       "items": "Dal"
-    },
-    {
-      "date": "26-08-08",
-      "cost": 510.0,
-      "person": "tanha",
-      "items": "egg,salt,chilli"
     }
   ]
 }
