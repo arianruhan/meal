@@ -128,6 +128,7 @@ def find_header_columns(ws, header_row=1):
         "khalar bill": "khalar",
         "gas bill": "gas",
         "electricity bill": "electricity",
+        "wifi bill": "wifi",
     }
     cols = {}
     for cell in ws[header_row]:
@@ -214,6 +215,7 @@ def main():
             "khalar": col_val("khalar"),
             "gas": col_val("gas"),
             "electricity": col_val("electricity"),
+            "wifi": col_val("wifi"),
         })
 
     meal_rate = to_float(find_label_value(ws, "Meal Rate"))
