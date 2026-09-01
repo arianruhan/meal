@@ -144,6 +144,7 @@ def find_header_columns(ws, header_row=1):
         "khalar bill": "khalar",
         "gas bill": "gas",
         "electricity bill": "electricity",
+        "wifi bill": "wifi",
     }
     cols = {}
     for cell in ws[header_row]:
