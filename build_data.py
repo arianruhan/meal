@@ -234,6 +234,7 @@ def main():
             "khalar": col_val("khalar"),
             "gas": col_val("gas"),
             "electricity": col_val("electricity"),
+            "wifi": col_val("wifi"),
         })
 
     meal_rate = to_float(find_label_value(ws, "Meal Rate"))
