@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T17:30:23.766247+00:00",
+  "generated_at": "2026-09-01T17:52:59.908890+00:00",
   "meal_rate": 0.0,
   "grand_total_meal": 8.0,
   "total_bazar_cost": 0,
@@ -203,7 +203,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Alvi",
@@ -401,7 +402,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Anwar",
@@ -599,7 +601,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Arafat",
@@ -797,7 +800,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Ariyan",
@@ -995,7 +999,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Didar",
@@ -1193,7 +1198,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Durjoy",
@@ -1391,7 +1397,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Nafiz",
@@ -1589,7 +1596,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Rabbi",
@@ -1787,7 +1795,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Sabuj",
@@ -1985,7 +1994,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Tanha",
@@ -2183,7 +2193,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     },
     {
       "name": "Tanjim",
@@ -2381,7 +2392,8 @@
       "balance": -420.0,
       "khalar": 420.0,
       "gas": 0.0,
-      "electricity": 0.0
+      "electricity": 0.0,
+      "wifi": 0.0
     }
   ],
   "bazar": []
