@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-04T05:27:29.122513+00:00",
-  "meal_rate": 65.3185,
+  "generated_at": "2026-09-04T09:51:48.532211+00:00",
+  "meal_rate": 98.963,
   "grand_total_meal": 67.5,
-  "total_bazar_cost": 4409.0,
+  "total_bazar_cost": 6680.0,
   "total_deposit": 8650.0,
-  "total_due": -3049.0,
-  "current_balance": 1991.0,
+  "total_due": -5320.0,
+  "current_balance": -280.0,
   "people": [
     {
       "name": "Al-Amin",
@@ -198,9 +198,9 @@
         }
       },
       "total_meals": 8.0,
-      "personal_cost": 1130.05,
+      "personal_cost": 1399.2,
       "deposit": 750.0,
-      "balance": -380.05,
+      "balance": -649.2,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -397,9 +397,9 @@
         }
       },
       "total_meals": 6.5,
-      "personal_cost": 1032.07,
+      "personal_cost": 1250.76,
       "deposit": 0.0,
-      "balance": -1032.07,
+      "balance": -1250.76,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -596,9 +596,9 @@
         }
       },
       "total_meals": 6.5,
-      "personal_cost": 1032.07,
+      "personal_cost": 1250.76,
       "deposit": 0.0,
-      "balance": -1032.07,
+      "balance": -1250.76,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -795,9 +795,9 @@
         }
       },
       "total_meals": 6.5,
-      "personal_cost": 1032.07,
+      "personal_cost": 1250.76,
       "deposit": 400.0,
-      "balance": -632.07,
+      "balance": -850.76,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -994,9 +994,9 @@
         }
       },
       "total_meals": 5.5,
-      "personal_cost": 966.75,
+      "personal_cost": 1151.8,
       "deposit": 0.0,
-      "balance": -966.75,
+      "balance": -1151.8,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -1193,9 +1193,9 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 672.82,
+      "personal_cost": 706.46,
       "deposit": 3500.0,
-      "balance": 2827.18,
+      "balance": 2793.54,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -1392,9 +1392,9 @@
         }
       },
       "total_meals": 6.5,
-      "personal_cost": 1032.07,
+      "personal_cost": 1250.76,
       "deposit": 2000.0,
-      "balance": 967.93,
+      "balance": 749.24,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -1591,9 +1591,9 @@
         }
       },
       "total_meals": 6.0,
-      "personal_cost": 999.41,
+      "personal_cost": 1201.28,
       "deposit": 0.0,
-      "balance": -999.41,
+      "balance": -1201.28,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -1790,9 +1790,9 @@
         }
       },
       "total_meals": 8.0,
-      "personal_cost": 1130.05,
+      "personal_cost": 1399.2,
       "deposit": 1000.0,
-      "balance": -130.05,
+      "balance": -399.2,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -1989,9 +1989,9 @@
         }
       },
       "total_meals": 6.5,
-      "personal_cost": 1032.07,
+      "personal_cost": 1250.76,
       "deposit": 1000.0,
-      "balance": -32.07,
+      "balance": -250.76,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -2387,9 +2387,9 @@
         }
       },
       "total_meals": 6.5,
-      "personal_cost": 1032.07,
+      "personal_cost": 1250.76,
       "deposit": 0.0,
-      "balance": -1032.07,
+      "balance": -1250.76,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 41.666666666666664,
@@ -2413,13 +2413,25 @@
       "date": "2026-02-09",
       "cost": 1450.0,
       "person": "Arafat",
-      "items": "CHAL"
+      "items": "CHAL-1450"
     },
     {
-      "date": "3/9/2*25",
-      "cost": 99.0,
+      "date": "2026-03-09",
+      "cost": 990.0,
       "person": "Arian vai",
-      "items": ""
+      "items": "mas, gosh, kochu+etc"
+    },
+    {
+      "date": "2026-03-09",
+      "cost": 360.0,
+      "person": "Durjoy",
+      "items": "dim"
+    },
+    {
+      "date": "2026-04-09",
+      "cost": 1020.0,
+      "person": "Arafat",
+      "items": "Gosh-750, chorbi-150, bag-10, ada-70, Dhonia gura-30"
     }
   ]
 }
