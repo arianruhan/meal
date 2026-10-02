@@ -196,7 +196,7 @@
   <div class="inner">
     <div>
       <p class="brand-eyebrow"> Baharam Uncle Mess </p>
-      <h1> September 2026 </h1>
+      <h1> October 2026 </h1>
     </div>
     <div class="status">
       <div><span class="dot"></span><span id="lastUpdated">loading…</span></div>
@@ -324,7 +324,7 @@ function renderLedger(data){
       .filter(([,v]) => v.total > 0)
       .sort((a,b) => Number(a[0]) - Number(b[0]));
     const dayChips = days.length
-      ? days.map(([d,v]) => `<div class="day-chip has-meal"><span class="d">Aug ${d}</span><span class="t">${dayLabel(v)} · ${v.total}</span></div>`).join('')
+      ? days.map(([d,v]) => `<div class="day-chip has-meal"><span class="d">Oct ${d}</span><span class="t">${dayLabel(v)} · ${v.total}</span></div>`).join('')
       : `<span class="breakdown-note">No meals recorded yet.</span>`;
     return `
       <tr class="row-toggle" data-target="${rowId}" tabindex="0">
