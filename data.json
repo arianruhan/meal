@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-02T16:41:49.539521+00:00",
+  "generated_at": "2026-10-02T16:49:01.109110+00:00",
   "meal_rate": 137.0244,
   "grand_total_meal": 41.0,
   "total_bazar_cost": 5618.0,
-  "total_deposit": 3000.0,
-  "total_due": -10408.0,
-  "current_balance": -5368.0,
+  "total_deposit": 4000.0,
+  "total_due": -9408.0,
+  "current_balance": -4368.0,
   "people": [
     {
       "name": "Al-Amin",
@@ -2388,8 +2388,8 @@
       },
       "total_meals": 7.0,
       "personal_cost": 1608.34,
-      "deposit": 0.0,
-      "balance": -1608.34,
+      "deposit": 1000.0,
+      "balance": -608.34,
       "khalar": 420.0,
       "gas": 145.83333333333334,
       "electricity": 83.33333333333333,
