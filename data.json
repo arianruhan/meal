@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-18T12:25:36.883169+00:00",
-  "meal_rate": 56.6583,
-  "grand_total_meal": 357.0,
-  "total_bazar_cost": 20227.0,
+  "generated_at": "2026-10-18T16:03:04.667862+00:00",
+  "meal_rate": 54.8835,
+  "grand_total_meal": 369.0,
+  "total_bazar_cost": 20252.0,
   "total_deposit": 26900.0,
-  "total_due": -3442.0,
-  "current_balance": 1598.0,
+  "total_due": -3467.0,
+  "current_balance": 1573.0,
   "people": [
     {
       "name": "Al-Amin",
@@ -114,9 +114,9 @@
         },
         "18": {
           "breakfast": 0.0,
-          "lunch": 0.0,
+          "lunch": 1.0,
           "dinner": 0.0,
-          "total": 0.0
+          "total": 1.0
         },
         "19": {
           "breakfast": 0.0,
@@ -197,10 +197,10 @@
           "total": 0.0
         }
       },
-      "total_meals": 33.0,
-      "personal_cost": 2712.64,
+      "total_meals": 34.0,
+      "personal_cost": 2708.95,
       "deposit": 2000.0,
-      "balance": -712.64,
+      "balance": -708.95,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -397,9 +397,9 @@
         }
       },
       "total_meals": 32.0,
-      "personal_cost": 2655.98,
+      "personal_cost": 2599.19,
       "deposit": 1500.0,
-      "balance": -1155.98,
+      "balance": -1099.19,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -512,9 +512,9 @@
         },
         "18": {
           "breakfast": 0.0,
-          "lunch": 0.0,
+          "lunch": 1.0,
           "dinner": 0.0,
-          "total": 0.0
+          "total": 1.0
         },
         "19": {
           "breakfast": 0.0,
@@ -595,10 +595,10 @@
           "total": 0.0
         }
       },
-      "total_meals": 25.5,
-      "personal_cost": 2287.7,
+      "total_meals": 26.5,
+      "personal_cost": 2297.33,
       "deposit": 1000.0,
-      "balance": -1287.7,
+      "balance": -1297.33,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -711,9 +711,9 @@
         },
         "18": {
           "breakfast": 0.0,
-          "lunch": 0.0,
+          "lunch": 2.0,
           "dinner": 0.0,
-          "total": 0.0
+          "total": 2.0
         },
         "19": {
           "breakfast": 0.0,
@@ -794,10 +794,10 @@
           "total": 0.0
         }
       },
-      "total_meals": 29.0,
-      "personal_cost": 2486.01,
+      "total_meals": 31.0,
+      "personal_cost": 2544.3,
       "deposit": 2800.0,
-      "balance": 313.99,
+      "balance": 255.7,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -994,9 +994,9 @@
         }
       },
       "total_meals": 29.0,
-      "personal_cost": 2486.01,
+      "personal_cost": 2434.54,
       "deposit": 1000.0,
-      "balance": -1486.01,
+      "balance": -1434.54,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -1109,9 +1109,9 @@
         },
         "18": {
           "breakfast": 0.0,
-          "lunch": 0.0,
-          "dinner": 0.0,
-          "total": 0.0
+          "lunch": 1.0,
+          "dinner": 1.0,
+          "total": 2.0
         },
         "19": {
           "breakfast": 0.0,
@@ -1192,10 +1192,10 @@
           "total": 0.0
         }
       },
-      "total_meals": 23.5,
-      "personal_cost": 2174.39,
+      "total_meals": 25.5,
+      "personal_cost": 2242.45,
       "deposit": 2000.0,
-      "balance": -174.39,
+      "balance": -242.45,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -1308,9 +1308,9 @@
         },
         "18": {
           "breakfast": 0.0,
-          "lunch": 0.0,
-          "dinner": 0.0,
-          "total": 0.0
+          "lunch": 1.0,
+          "dinner": 1.0,
+          "total": 2.0
         },
         "19": {
           "breakfast": 0.0,
@@ -1391,10 +1391,10 @@
           "total": 0.0
         }
       },
-      "total_meals": 31.5,
-      "personal_cost": 2627.65,
+      "total_meals": 33.5,
+      "personal_cost": 2681.51,
       "deposit": 3000.0,
-      "balance": 372.35,
+      "balance": 318.49,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -1507,9 +1507,9 @@
         },
         "18": {
           "breakfast": 0.0,
-          "lunch": 0.0,
-          "dinner": 0.0,
-          "total": 0.0
+          "lunch": 1.0,
+          "dinner": 1.0,
+          "total": 2.0
         },
         "19": {
           "breakfast": 0.0,
@@ -1590,10 +1590,10 @@
           "total": 0.0
         }
       },
-      "total_meals": 30.0,
-      "personal_cost": 2542.66,
+      "total_meals": 32.0,
+      "personal_cost": 2599.19,
       "deposit": 2000.0,
-      "balance": -542.66,
+      "balance": -599.19,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -1707,8 +1707,8 @@
         "18": {
           "breakfast": 0.0,
           "lunch": 0.0,
-          "dinner": 0.0,
-          "total": 0.0
+          "dinner": 1.0,
+          "total": 1.0
         },
         "19": {
           "breakfast": 0.0,
@@ -1789,10 +1789,10 @@
           "total": 0.0
         }
       },
-      "total_meals": 27.0,
-      "personal_cost": 2372.69,
+      "total_meals": 28.0,
+      "personal_cost": 2379.65,
       "deposit": 2500.0,
-      "balance": 127.31,
+      "balance": 120.35,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -1905,9 +1905,9 @@
         },
         "18": {
           "breakfast": 0.0,
-          "lunch": 0.0,
+          "lunch": 1.0,
           "dinner": 0.0,
-          "total": 0.0
+          "total": 1.0
         },
         "19": {
           "breakfast": 0.0,
@@ -1988,10 +1988,10 @@
           "total": 0.0
         }
       },
-      "total_meals": 26.5,
-      "personal_cost": 2344.36,
+      "total_meals": 27.5,
+      "personal_cost": 2352.21,
       "deposit": 2800.0,
-      "balance": 455.64,
+      "balance": 447.79,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -2188,9 +2188,9 @@
         }
       },
       "total_meals": 30.5,
-      "personal_cost": 2570.99,
+      "personal_cost": 2516.86,
       "deposit": 3000.0,
-      "balance": 429.01,
+      "balance": 483.14,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -2387,9 +2387,9 @@
         }
       },
       "total_meals": 39.5,
-      "personal_cost": 3080.92,
+      "personal_cost": 3010.81,
       "deposit": 3300.0,
-      "balance": 219.08,
+      "balance": 289.19,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -2501,9 +2501,9 @@
     },
     {
       "date": "2026-10-17",
-      "cost": 25.0,
+      "cost": 50.0,
       "person": "rabbi",
-      "items": "piyaj"
+      "items": "egg,piyaj"
     }
   ]
 }
