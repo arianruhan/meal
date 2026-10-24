@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-24T14:03:59.087870+00:00",
+  "generated_at": "2026-10-24T17:31:14.372293+00:00",
   "meal_rate": 54.2269,
   "grand_total_meal": 379.0,
   "total_bazar_cost": 20552.0,
-  "total_deposit": 26900.0,
-  "total_due": -3767.0,
-  "current_balance": 1273.0,
+  "total_deposit": 27900.0,
+  "total_due": -2767.0,
+  "current_balance": 2273.0,
   "people": [
     {
       "name": "Al-Amin",
@@ -1592,8 +1592,8 @@
       },
       "total_meals": 32.5,
       "personal_cost": 2605.29,
-      "deposit": 2000.0,
-      "balance": -605.29,
+      "deposit": 3000.0,
+      "balance": 394.71,
       "khalar": 420.0,
       "gas": 166.66666666666666,
       "electricity": 125.0,
@@ -2507,7 +2507,7 @@
     },
     {
       "date": "2026-10-18",
-      "cost": 960.0,
+      "cost": 980.0,
       "person": "Emamul Vai",
       "items": "Due"
     },
