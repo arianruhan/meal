@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-04T05:01:44.735337+00:00",
-  "meal_rate": 0.0,
-  "grand_total_meal": 11.0,
-  "total_bazar_cost": 0,
-  "total_deposit": 8000.0,
-  "total_due": 2960.0,
-  "current_balance": 6000.0,
+  "generated_at": "2026-11-04T13:10:08.294752+00:00",
+  "meal_rate": 191.6667,
+  "grand_total_meal": 12.0,
+  "total_bazar_cost": 2300.0,
+  "total_deposit": 10000.0,
+  "total_due": 460.0,
+  "current_balance": 5500.0,
   "people": [
     {
       "name": "Al-Amin",
@@ -198,11 +198,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 0.0,
-      "balance": -420.0,
+      "balance": -795.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -397,11 +397,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 0.0,
-      "balance": -420.0,
+      "balance": -795.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -596,11 +596,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 0.0,
-      "balance": -420.0,
+      "balance": -795.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -795,11 +795,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 3500.0,
-      "balance": 3080.0,
+      "balance": 2705.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -994,11 +994,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
-      "deposit": 0.0,
-      "balance": -420.0,
+      "personal_cost": 795.0,
+      "deposit": 2000.0,
+      "balance": 1205.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -1193,11 +1193,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 0.0,
-      "balance": -420.0,
+      "balance": -795.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -1392,11 +1392,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 3500.0,
-      "balance": 3080.0,
+      "balance": 2705.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -1591,11 +1591,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 0.0,
-      "balance": -420.0,
+      "balance": -795.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -1623,8 +1623,8 @@
         "4": {
           "breakfast": 0.0,
           "lunch": 1.0,
-          "dinner": 0.0,
-          "total": 1.0
+          "dinner": 1.0,
+          "total": 2.0
         },
         "5": {
           "breakfast": 0.0,
@@ -1789,12 +1789,12 @@
           "total": 0.0
         }
       },
-      "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "total_meals": 2.0,
+      "personal_cost": 986.67,
       "deposit": 0.0,
-      "balance": -420.0,
+      "balance": -986.67,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -1989,11 +1989,11 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 0.0,
-      "balance": -420.0,
+      "balance": -795.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -2188,11 +2188,11 @@
         }
       },
       "total_meals": 0.0,
-      "personal_cost": 420.0,
+      "personal_cost": 603.33,
       "deposit": 0.0,
-      "balance": -420.0,
+      "balance": -603.33,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     },
@@ -2387,14 +2387,27 @@
         }
       },
       "total_meals": 1.0,
-      "personal_cost": 420.0,
+      "personal_cost": 795.0,
       "deposit": 1000.0,
-      "balance": 580.0,
+      "balance": 205.0,
       "khalar": 420.0,
-      "gas": 0.0,
+      "gas": 183.33333333333334,
       "electricity": 0.0,
       "wifi": 0.0
     }
   ],
-  "bazar": []
+  "bazar": [
+    {
+      "date": "2026-11-04",
+      "cost": 610.0,
+      "person": "Sabuj, shohan",
+      "items": "mas, lao, packet"
+    },
+    {
+      "date": "26-11-04",
+      "cost": 1690.0,
+      "person": "Sabuj, shohan",
+      "items": "Dal, peaj, roshun, oil, dim, gorom moshla..."
+    }
+  ]
 }
