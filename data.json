@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-06T10:21:27.962072+00:00",
-  "meal_rate": 47.9592,
+  "generated_at": "2026-11-06T17:37:53.560461+00:00",
+  "meal_rate": 129.7959,
   "grand_total_meal": 49.0,
-  "total_bazar_cost": 2350.0,
-  "total_deposit": 15055.0,
-  "total_due": 5465.0,
-  "current_balance": 10505.0,
+  "total_bazar_cost": 6360.0,
+  "total_deposit": 15060.0,
+  "total_due": 1460.0,
+  "current_balance": 6500.0,
   "people": [
     {
       "name": "Al-Amin",
@@ -198,9 +198,9 @@
         }
       },
       "total_meals": 6.5,
-      "personal_cost": 915.07,
+      "personal_cost": 1447.01,
       "deposit": 0.0,
-      "balance": -915.07,
+      "balance": -1447.01,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -397,9 +397,9 @@
         }
       },
       "total_meals": 5.0,
-      "personal_cost": 843.13,
+      "personal_cost": 1252.31,
       "deposit": 0.0,
-      "balance": -843.13,
+      "balance": -1252.31,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -596,9 +596,9 @@
         }
       },
       "total_meals": 3.0,
-      "personal_cost": 747.21,
+      "personal_cost": 992.72,
       "deposit": 0.0,
-      "balance": -747.21,
+      "balance": -992.72,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -795,9 +795,9 @@
         }
       },
       "total_meals": 3.0,
-      "personal_cost": 747.21,
+      "personal_cost": 992.72,
       "deposit": 3500.0,
-      "balance": 2752.79,
+      "balance": 2507.28,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -994,9 +994,9 @@
         }
       },
       "total_meals": 5.5,
-      "personal_cost": 867.11,
+      "personal_cost": 1317.21,
       "deposit": 2000.0,
-      "balance": 1132.89,
+      "balance": 682.79,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -1193,9 +1193,9 @@
         }
       },
       "total_meals": 4.0,
-      "personal_cost": 795.17,
+      "personal_cost": 1122.52,
       "deposit": 0.0,
-      "balance": -795.17,
+      "balance": -1122.52,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -1392,9 +1392,9 @@
         }
       },
       "total_meals": 4.5,
-      "personal_cost": 819.15,
+      "personal_cost": 1187.41,
       "deposit": 3500.0,
-      "balance": 2680.85,
+      "balance": 2312.59,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -1591,9 +1591,9 @@
         }
       },
       "total_meals": 4.5,
-      "personal_cost": 819.15,
+      "personal_cost": 1187.41,
       "deposit": 0.0,
-      "balance": -819.15,
+      "balance": -1187.41,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -1790,9 +1790,9 @@
         }
       },
       "total_meals": 6.0,
-      "personal_cost": 891.09,
-      "deposit": 3055.0,
-      "balance": 2163.91,
+      "personal_cost": 1382.11,
+      "deposit": 3060.0,
+      "balance": 1677.89,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -1989,9 +1989,9 @@
         }
       },
       "total_meals": 3.5,
-      "personal_cost": 771.19,
+      "personal_cost": 1057.62,
       "deposit": 2000.0,
-      "balance": 1228.81,
+      "balance": 942.38,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -2387,9 +2387,9 @@
         }
       },
       "total_meals": 3.5,
-      "personal_cost": 771.19,
+      "personal_cost": 1057.62,
       "deposit": 1000.0,
-      "balance": 228.81,
+      "balance": -57.62,
       "khalar": 420.0,
       "gas": 183.33333333333334,
       "electricity": 0.0,
@@ -2410,8 +2410,14 @@
       "items": "vim bar, Kancha morich"
     },
     {
+      "date": "2026-11-06",
+      "cost": 4000.0,
+      "person": "Arafat, Durjoy",
+      "items": "[12:36, 06/11/2026] Arafat Mess: vai, chal 1520tk, dhonia gura 20, jhal 45, salt 80, oil 945, gosh 1000, chorbi 100, kola 40, fulkopy 65,  chal 180"
+    },
+    {
       "date": "26-11-04",
-      "cost": 1690.0,
+      "cost": 1700.0,
       "person": "Sabuj, shohan",
       "items": "Dal, peaj, roshun, oil, dim, gorom moshla..."
     }
